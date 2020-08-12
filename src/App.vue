@@ -1,28 +1,43 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: linxp
+ * @Date: 2020-08-12 14:40:19
+ * @LastEditors: linxp
+ * @LastEditTime: 2020-08-12 15:38:53
+-->
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+      <div class="x-flex">
+        <SelectBox :active.sync="active">
+          <div style="height: 100px;width: 100px; background: #409EFF;"></div>
+        </SelectBox>
+      </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import SelectBox from "./components/select-box"
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    SelectBox
+  },
+  data(){
+    return{
+      active: false
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+#app{
+  width: 1300px;
+  margin: 20px auto;
+}
+.x-flex{
+  display: flex;
+  align-items: center;
 }
 </style>
